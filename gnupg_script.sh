@@ -9,3 +9,4 @@ gpg --armor --export-secret-keys XXXXXXXX # Exportamos la llave privada
 gpg --armor --export buitronariel23@gmail.com > mi_llave_publica.asc # exportar mi llave publica
 gpg --import compa_llave_publica.asc #llave publica compa importación
 echo "este mensaje es secreto" > doc_no_cifrado.txt #mostramos el mensaje creado un archivo .txt
+gpg --output doc_cifrado.txt --encrypt --recipient paulitagaby12@gmail.com doc_no_cifrado.txt # ciframos el mensaje de mi compañero usando el correo de mi compañera o tambien puede ser el hash
