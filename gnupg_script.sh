@@ -29,3 +29,4 @@ gpg --verify pau_doc_no_cifrado_firmado.text.txt #verification of my colleague's
 gpg --output doc_no_cifrado_firmado_binario.txt --sign doc_no_cifrado.txt # Sign the document in binary 
 gpg --verify pau_doc_no_cifrado_firmado_binario.text.txt #The command is used to verify that my colleague's command is signed in binary format.
 gpg --output firma_separada_doc_no_cifrado.sig --detach-sign doc_no_cifrado.txt #Add detached signature to document
+gpg --verify pau_firma_separada_doc_no_cifrado.sig pau_doc_no_cifrado.text.txt #Verify partner's detached signature
