@@ -19,3 +19,8 @@ gpg --import compa_llave_publica.asc #llave publica compa importación
 echo "este mensaje es secreto" > doc_no_cifrado.txt #mostramos el mensaje creado un archivo .txt
 gpg --output doc_cifrado.txt --encrypt --recipient paulitagaby12@gmail.com doc_no_cifrado.txt # ciframos el mensaje de mi compañero usando el correo de mi compañera o tambien puede ser el hash
 gpg --decrypt paula_doc_cifrado.text.txt #descargamos el archivo cifrado de nuestro compañero y lo desencriptamos con el comando y vemos el contenido del mensaje
+
+# === Bloque D — Firma de documentos ===
+
+# 1. Firma en texto claro
+gpg --output doc_no_cifrado_firmado.txt --clearsign doc_no_cifrado.txt
