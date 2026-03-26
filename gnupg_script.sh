@@ -32,3 +32,4 @@ gpg --output firma_separada_doc_no_cifrado.sig --detach-sign doc_no_cifrado.txt 
 gpg --verify pau_firma_separada_doc_no_cifrado.sig pau_doc_no_cifrado.text.txt #Verify partner's detached signature
 gpg --edit-key paulitagaby12@gmail.com #We entered the interactive menu and typed "trust".
 gpg --sign-key XXXXXXX #We signed the key to certify our trust
+gpg --verify pau_doc_no_cifrado_firmado.text.txt #We check again and see that the trust warning disappears
