@@ -26,3 +26,4 @@ gpg --decrypt paula_doc_cifrado.text.txt #descargamos el archivo cifrado de nues
 gpg --output doc_no_cifrado_firmado.txt --clearsign doc_no_cifrado.txt #Add clearsign signature to document
 cat doc_no_cifrado_firmado.txt # verification of the created document
 gpg --verify pau_doc_no_cifrado_firmado.text.txt #verification of my colleague's document
+gpg --output doc_no_cifrado_firmado_binario.txt --sign doc_no_cifrado.txt # Sign the document in binary 
