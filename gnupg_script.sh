@@ -8,3 +8,4 @@ gpg --list-secret-keys --keyid-format=long # listar llave privada
 gpg --armor --export-secret-keys XXXXXXXX # Exportamos la llave privada
 gpg --armor --export buitronariel23@gmail.com > mi_llave_publica.asc # exportar mi llave publica
 gpg --import compa_llave_publica.asc #llave publica compa importación
+echo "este mensaje es secreto" > doc_no_cifrado.txt #mostramos el mensaje creado un archivo .txt
