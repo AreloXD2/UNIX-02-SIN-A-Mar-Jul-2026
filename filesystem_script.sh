@@ -14,4 +14,5 @@ sudo mv saludobin /bin/
 cd /etc
 #Navigate into the gss subdirectory
 cd gss/
-
+#Print the absolute path of the current working directory
+pwd
