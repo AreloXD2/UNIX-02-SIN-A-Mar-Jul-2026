@@ -8,3 +8,13 @@ sudo apt update
 sudo apt upgrade
 #Installs the Parted tool for disk partition management
 sudo apt install parted
+#Displays partition tables and filesystems in a formatted combined output
+sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e "\n---\n"
+#Lists all disk partitions and their details using Parted
+sudo parted -l
+#Shows block devices with filesystem information
+lsblk -f
+#Logical AND operator: runs the next command only if the previous one succeeds
+&& 
+# Prints a formatted separator line with newlines for better readability in terminal output
+echo -e "\n---\n"
