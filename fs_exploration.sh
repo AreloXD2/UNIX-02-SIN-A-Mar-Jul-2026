@@ -24,3 +24,5 @@ echo -e "\n---\n"
 ||
 #Checks if the /sys/firmware/efi directory exists (used to detect UEFI systems)
 [ -d /sys/firmware/efi ]
+#Displays detailed information about a file, including size, permissions, timestamps, and inode data
+stat test.txt
