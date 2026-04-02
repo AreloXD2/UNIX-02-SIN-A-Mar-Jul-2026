@@ -18,3 +18,9 @@ lsblk -f
 && 
 # Prints a formatted separator line with newlines for better readability in terminal output
 echo -e "\n---\n"
+#Checks if the system is using UEFI or BIOS firmware
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
+#Logical OR operator: runs the next command only if the previous one fails
+||
+#Checks if the /sys/firmware/efi directory exists (used to detect UEFI systems)
+[ -d /sys/firmware/efi ]
