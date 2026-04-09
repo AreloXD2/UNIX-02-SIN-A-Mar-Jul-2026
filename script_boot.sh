@@ -46,3 +46,13 @@ stat .
 #"4" is the minor number: it identifies the specific device handled by that driver
 #Together, major and minor numbers uniquely identify the device where the file/directory is stored
 Device: 7,4   
+#where am I? Show the current working directory
+pwd
+#who am I? Display the current user
+whoami
+#List files sorted by last modification time (most recent first)
+ls -lt
+#List the first 20 entries in /etc directory
+ls /etc | head -20
+#List the last 20 entries in /dev directory
+ls /dev | tail -20
