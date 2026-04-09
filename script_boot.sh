@@ -40,3 +40,9 @@ total 8
 1572972 drwxrwxrwx+ 2 codespace codespace 4096 Apr  9 12:19 .
 #Shows inode, directory type, permissions, links, owner/group, size, date, and ".." meaning parent directory
 1572874 drwxrwxrwx+ 5 codespace root      4096 Apr  9 12:19 ..
+#Show detailed information about the current directory
+stat .
+#"7" is the major number: it identifies the device driver (type of device)
+#"4" is the minor number: it identifies the specific device handled by that driver
+#Together, major and minor numbers uniquely identify the device where the file/directory is stored
+Device: 7,4   
