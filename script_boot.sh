@@ -8,3 +8,17 @@ cd proyecto/
 cd ..
 #We access the “project” folder directly using a full absolute path
 cd /workspaces/UNIX-02-SIN-A-Mar-Jul-2026/proyecto
+#Change to the user's home directory (default behavior of cd)
+cd
+#Change directory to "/home/codespace" using an absolute path
+cd /home/codespace
+#Change to the home directory using the "~" shortcut
+cd ~
+#Change to the home directory using the $HOME environment variable
+cd $HOME
+#Display the value of the HOME environment variable (user's home path)
+echo $HOME
+#Display the path of the current Bash shell being used
+echo $BASH
+#Display the PATH variable (directories where executables are searched)
+echo $PATH
