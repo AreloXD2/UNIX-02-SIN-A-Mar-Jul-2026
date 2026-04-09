@@ -22,3 +22,15 @@ echo $HOME
 echo $BASH
 #Display the PATH variable (directories where executables are searched)
 echo $PATH
+#List all files (including hidden ones) with detailed info and inode numbers(faster)
+ls -lai
+#Same as above, but using separated options (-l, -a, -i)(slower)
+ls -l -a -i
+#Open the manual page for the "ls" command
+man ls
+#List all files including hidden ones (same as -a) full name of the command option
+ls --all
+#"." refers to the current directory
+.
+#".." refers to the parent directory (one level up)
+..
