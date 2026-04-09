@@ -34,3 +34,9 @@ ls --all
 .
 #".." refers to the parent directory (one level up)
 ..
+#Total disk space used by the listed entries (in blocks)
+total 8
+#Shows inode, directory type, permissions, links, owner/group, size, date, and "." meaning current directory
+1572972 drwxrwxrwx+ 2 codespace codespace 4096 Apr  9 12:19 .
+#Shows inode, directory type, permissions, links, owner/group, size, date, and ".." meaning parent directory
+1572874 drwxrwxrwx+ 5 codespace root      4096 Apr  9 12:19 ..
