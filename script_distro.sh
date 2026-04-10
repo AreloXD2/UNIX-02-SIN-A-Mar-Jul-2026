@@ -18,3 +18,7 @@ sudo mkdir /boot-files
 sudo cp arch/x86/boot/bzImage /boot-files/
 #Change to the user's home directory (default behavior of cd)
 cd 
+#Clone the BusyBox source code (shallow clone for faster download)
+git clone --depth 1 https://git.busybox.net/busybox
+#Enter the BusyBox source directory
+cd busybox
