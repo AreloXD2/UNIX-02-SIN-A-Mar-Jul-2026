@@ -30,3 +30,11 @@ make -j 4
 sudo mkdir /boot-files/initramfs
 #Install BusyBox into the initramfs directory using CONFIG_PREFIX
 sudo make CONFIG_PREFIX=/boot-files/initramfs install
+#Navigate to the initramfs directory
+cd /boot-files/initramfs
+#Create and edit the "init" file using vi (requires root privileges)
+sudo vi init
+#Specify the shell to be executed at boot
+#!/bin/sh
+#Launch an interactive shell
+/bin/sh
