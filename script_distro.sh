@@ -26,3 +26,7 @@ cd busybox
 make menuconfig
 #Compile BusyBox using 4 parallel jobs to speed up the build process
 make -j 4
+#Create a directory for the initramfs filesystem (requires root privileges)
+sudo mkdir /boot-files/initramfs
+#Install BusyBox into the initramfs directory using CONFIG_PREFIX
+sudo make CONFIG_PREFIX=/boot-files/initramfs install
