@@ -38,3 +38,9 @@ sudo vi init
 #!/bin/sh
 #Launch an interactive shell
 /bin/sh
+#Remove the default linuxrc file (if it exists) from initramfs
+sudo rm linuxrc
+#Make the init script executable
+sudo chmod +x init
+#Create an initramfs archive in newc format from current directory contents
+sudo find . | cpio -o -H newc > ../init.cpio
