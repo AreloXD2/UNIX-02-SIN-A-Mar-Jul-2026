@@ -60,3 +60,5 @@ mount boot m
 cp bzImage init.cpio m
 #Unmount the filesystem from directory "m"
 umount m
+#Run a virtual machine using QEMU with no graphical output, booting the kernel (bzImage) with initramfs and using "boot" as disk image
+qemu-system-x86_64 -nographic -append "console=ttyS0" -kernel bzImage -initrd init.cpio -drive file=boot,format=raw
