@@ -10,3 +10,5 @@ git clone --depth 1 https://github.com/torvalds/linux.git
 cd linux
 #Launch the kernel configuration menu graphic interface
 make menuconfig
+#Compile the kernel using 2 parallel jobs to speed up the build process
+make -j 2
