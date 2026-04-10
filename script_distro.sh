@@ -44,3 +44,11 @@ sudo rm linuxrc
 sudo chmod +x init
 #Create an initramfs archive in newc format from current directory contents
 sudo find . | cpio -o -H newc > ../init.cpio
+#Navigate to the /boot-files directory
+cd /boot-files
+#Create a 50MB empty file named "boot" filled with zeros (acts as a disk image)
+dd if=/dev/zero of=boot bs=1M count=50
+#Format the "boot" file with a FAT filesystem
+mkfs -t fat boot
+#Install Syslinux bootloader into the "boot" filesystem
+syslinux boot
