@@ -52,3 +52,11 @@ dd if=/dev/zero of=boot bs=1M count=50
 mkfs -t fat boot
 #Install Syslinux bootloader into the "boot" filesystem
 syslinux boot
+#Create a mount point directory named "m"
+mkdir m
+#Mount the boot image file into directory "m"
+mount boot m
+#Copy kernel image and initramfs archive into the mounted filesystem
+cp bzImage init.cpio m
+#Unmount the filesystem from directory "m"
+umount m
