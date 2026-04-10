@@ -12,3 +12,5 @@ cd linux
 make menuconfig
 #Compile the kernel using 2 parallel jobs to speed up the build process
 make -j 2
+#Create a directory named "boot-files" in / (requires root privileges)
+sudo mkdir /boot-files

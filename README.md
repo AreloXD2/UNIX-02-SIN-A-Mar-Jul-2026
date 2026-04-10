@@ -12,3 +12,5 @@ Repo for intro to UNIX
 ![alt text](image-5.png)
 6.
 ![alt text](image-6.png)
+7.
+![alt text](image-7.png)
