@@ -22,3 +22,5 @@ cd
 git clone --depth 1 https://git.busybox.net/busybox
 #Enter the BusyBox source directory
 cd busybox
+#Launch the BusyBox configuration menu (interactive interface using ncurses)
+make menuconfig

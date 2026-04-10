@@ -19,3 +19,4 @@ Repo for intro to UNIX
 9.
 ![alt text](image-9.png)
 10.
+![alt text](image-10.png)
