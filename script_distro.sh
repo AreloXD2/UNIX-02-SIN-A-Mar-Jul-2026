@@ -24,3 +24,5 @@ git clone --depth 1 https://git.busybox.net/busybox
 cd busybox
 #Launch the BusyBox configuration menu (interactive interface using ncurses)
 make menuconfig
+#Compile BusyBox using 4 parallel jobs to speed up the build process
+make -j 4
