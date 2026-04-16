@@ -16,3 +16,13 @@ man git-clone
 --depth <depth>
            Create a shallow clone with a history truncated to the specified number of commits. Implies --single-branch unless --no-single-branch is given to fetch the
            histories near the tips of all branches. If you want to clone submodules shallowly, also pass --shallow-submodules.
+#Grants execution permissions to everyone (owner, group, and others) for the script
+chmod +x script.sh
+#Grants execution permissions exclusively to the file owner
+chmod u+x script.sh 
+#Revokes read access for other users, restricting outside visibility
+chmod o-r secreto.txt 
+#Grants the owner read and write access, while denying all permissions to group and others
+chmod u+rw,go-rwx privado 
+#Verify file permissions and detailed file information
+ls -l
