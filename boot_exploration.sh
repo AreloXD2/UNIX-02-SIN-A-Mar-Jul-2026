@@ -26,3 +26,9 @@ chmod o-r secreto.txt
 chmod u+rw,go-rwx privado 
 #Verify file permissions and detailed file information
 ls -l
+#Fails because the shell evaluates the redirection (>) using standard user privileges before executing 'sudo', resulting in a 'Permission denied' error.
+sudo echo "hola" > /etc/archivo_protegido
+#Succeeds because 'sudo' elevates the 'tee' command to root privileges, allowing it to write the piped input into the protected file. The '> /dev/null' part safely discards the console output.
+echo "hola" | sudo tee /etc/archivo_protegido > /dev/null
+#Writes the text to the protected file with root privileges and simultaneously prints it to the terminal screen without (/dev/null)
+echo "hola" | sudo tee /etc/archivo_protegido 
