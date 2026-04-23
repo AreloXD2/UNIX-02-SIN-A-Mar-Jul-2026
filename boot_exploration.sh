@@ -62,3 +62,15 @@ chmod +x hola.sh
 ls -l hola.sh
 #Runs the script hola.sh
 ./hola.sh
+#List contents of the /etc directory
+ls /etc
+#Attempt to create a file in a protected directory (fails due to lack of permissions)
+touch /etc/prueba.txt
+#Successfully create the file using root privileges
+sudo touch /etc/prueba.txt
+#Create a new directory named mi_carpeta in the user's home directory
+mkdir ~/mi_carpeta
+#Attempt to install a package (fails due to lack of permissions and package lock)
+apt install cowsay
+#Successfully install the cowsay package using root privileges
+sudo apt install cowsay
