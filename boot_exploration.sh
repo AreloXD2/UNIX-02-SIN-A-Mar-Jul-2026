@@ -74,3 +74,13 @@ mkdir ~/mi_carpeta
 apt install cowsay
 #Successfully install the cowsay package using root privileges
 sudo apt install cowsay
+#Create an empty file named prueba.txt
+touch prueba.txt
+#Set permissions to read and write for the owner only (octal mode 600)
+chmod 600 prueba.txt
+#Verify the current permissions of the file
+ls -l prueba.txt
+#Set permissions to read/write/execute for owner, and read/execute for group/others (octal mode 755)
+chmod 755 prueba.txt
+#Verify the updated permissions
+ls -l prueba.txt
