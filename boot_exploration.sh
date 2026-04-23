@@ -46,3 +46,19 @@ sudo su -
 echo "$HOME"
 #Display the literal string '$HOME' without expanding the variable
 echo '$HOME'
+#Create a new file named hola.sh and add the shebang to specify the shell interpreter
+echo '#!/bin/sh' > hola.sh
+#Append an echo command to hola.sh that will print a message when executed
+echo 'echo "Hola desde mi primer script"' >> hola.sh
+#Read and display the content of the script file to verify its structure
+cat hola.sh
+#Executes the script file (requires execute permission)
+./hola.sh
+#Shows detailed information and permissions of the file hola.sh
+ls -l hola.sh
+#Grant execute permissions to the script file for the current user
+chmod +x hola.sh 
+#We check that the file hola.sh has chamge the permissions
+ls -l hola.sh
+#Runs the script hola.sh
+./hola.sh
