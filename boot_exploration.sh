@@ -32,3 +32,5 @@ sudo echo "hola" > /etc/archivo_protegido
 echo "hola" | sudo tee /etc/archivo_protegido > /dev/null
 #Writes the text to the protected file with root privileges and simultaneously prints it to the terminal screen without (/dev/null)
 echo "hola" | sudo tee /etc/archivo_protegido 
+#Appends the string "chao" to a protected system file using elevated privileges.
+sudo sh -c 'echo "chao" >> /etc/archivo_protegido'
