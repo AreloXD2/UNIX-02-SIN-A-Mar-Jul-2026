@@ -42,3 +42,7 @@ exit
 sudo su
 #Switch to the superuser (root) and simulate a full login, re-initializing the environment
 sudo su -
+#Display the value of the HOME environment variable (variable expansion)
+echo "$HOME"
+#Display the literal string '$HOME' without expanding the variable
+echo '$HOME'
