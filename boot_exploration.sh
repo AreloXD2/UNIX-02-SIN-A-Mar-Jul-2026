@@ -34,3 +34,11 @@ echo "hola" | sudo tee /etc/archivo_protegido > /dev/null
 echo "hola" | sudo tee /etc/archivo_protegido 
 #Appends the string "chao" to a protected system file using elevated privileges.
 sudo sh -c 'echo "chao" >> /etc/archivo_protegido'
+#Start an interactive login shell as the root user
+sudo -i
+#Terminate the current shell session and return to the previous user
+exit
+#Switch to the superuser (root) while preserving the current user's environment variables
+sudo su
+#Switch to the superuser (root) and simulate a full login, re-initializing the environment
+sudo su -
