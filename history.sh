@@ -22,4 +22,4 @@
    chmod 640 sensores.log
    ls -l
    git add .
-   git commit -m "Fix problema 3: permisos numericos 640 en sensores.log"
+   git commit -m "Fix problem 3: numeric permissions 640 on sensores.log"
