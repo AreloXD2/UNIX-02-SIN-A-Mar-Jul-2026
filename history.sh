@@ -35,5 +35,10 @@
   ls -l evaluation/kepler/runner.sh
   git add .
   git commit -m "Fix problem 5: SUID activated on runner.sh"
-  
-   
+
+ EX 6
+ mkdir /tmp/kepler_zone
+ chmod +t /tmp/kepler_zone
+ ls -ld /tmp/kepler_zone
+ git add .
+ git commit -m "Fix problem 6: sticky bit on /tmp/kepler_zone"
