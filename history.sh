@@ -42,3 +42,6 @@
  ls -ld /tmp/kepler_zone
  git add .
  git commit -m "Fix problem 6: sticky bit on /tmp/kepler_zone"
+
+ EX 7
+ gpg --full-generate-key
