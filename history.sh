@@ -23,3 +23,17 @@
    ls -l
    git add .
    git commit -m "Fix problem 3: numeric permissions 640 on sensores.log"
+   
+   EX 4
+   chmod u+x evaluation/kepler/runner.sh
+   chmod o-w evaluation/kepler/ajustes.conf
+   git add .
+   git commit -m "Fix problem 4: permissions corrected"
+
+  EX 5
+  chmod u+s evaluation/kepler/runner.sh
+  ls -l evaluation/kepler/runner.sh
+  git add .
+  git commit -m "Fix problem 5: SUID activated on runner.sh"
+  
+   
