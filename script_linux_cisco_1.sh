@@ -96,3 +96,5 @@ cat alpha.txt
 head alpha.txt
 #Displays the last 10 lines (default behavior) of the alpha.txt file
 tail alpha.txt
+#Displays a specific number of lines (the first 5) from the beginning of the file using the -n option
+head -n 5 alpha.txt
