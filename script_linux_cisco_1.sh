@@ -29,3 +29,5 @@ pwd
 cd
 #Changes to the "Documents" directory using a simple relative path
 cd Documents
+#Navigates to the root directory (/) of the Linux filesystem
+cd /
