@@ -27,3 +27,5 @@ aptitude -v -v moo
 pwd
 #Change directory (cd) command: used to navigate between folders in the file system
 cd
+#Changes to the "Documents" directory using a simple relative path
+cd Documents
