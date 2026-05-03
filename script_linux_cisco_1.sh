@@ -3,3 +3,5 @@ Linux course commands
 ls
 #Lists the contents of a specific directory (in this case, "Documents")and acts as an argument for the command
 ls Documents
+#Executes a well-known Easter egg in the aptitude package manager
+aptitude moo
