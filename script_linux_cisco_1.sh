@@ -82,3 +82,5 @@ ls -l hello.sh
 ls -l
 #Changes the owner of the hello.sh script to the root user, requiring administrative privileges
 sudo chown root hello.sh
+#Verifies the ownership change to ensure root is now the owner of the script
+ls -l hello.sh
