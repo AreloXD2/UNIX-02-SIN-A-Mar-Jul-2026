@@ -106,3 +106,5 @@ cp /etc/passwd .
 ls
 # Returns to the user's home directory before running the dd command
 cd ~
+# Copies 50 blocks of 1 Megabyte of zeros to create a 50MB file named swapex in /tmp
+dd if=/dev/zero of=/tmp/swapex bs=1M count=50
