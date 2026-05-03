@@ -78,3 +78,5 @@ chmod u+x hello.sh
 ls -l hello.sh
 #Executes the script successfully from the current directory now that permissions are set
 ./hello.sh
+#Lists all files in long format to view current ownership details for all files
+ls -l
