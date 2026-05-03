@@ -21,3 +21,5 @@ aptitude -v moo
 aptitude -vv moo
 #Executes the aptitude Easter egg with three combined levels of verbosity
 aptitude -vvv moo
+#Executes the aptitude Easter egg with two separated verbose options, achieving the same result as -vv
+aptitude -v -v moo
