@@ -56,3 +56,5 @@ ls -lt /var/log
 ls -l -S /var/log
 #Lists the contents of /var/log in long format, sorted by size, but reverses the order (smallest first) using combined options
 ls -lSr /var/log
+#Lists the contents of /var/log in reverse alphabetical order
+ls -r /var/log
