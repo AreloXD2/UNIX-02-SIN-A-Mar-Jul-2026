@@ -58,3 +58,5 @@ ls -l -S /var/log
 ls -lSr /var/log
 #Lists the contents of /var/log in reverse alphabetical order
 ls -r /var/log
+#Switches to the root user with a full login shell environment
+su -
