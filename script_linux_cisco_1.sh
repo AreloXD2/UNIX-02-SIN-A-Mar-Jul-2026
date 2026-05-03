@@ -90,3 +90,5 @@ ls -l hello.sh
 sudo ./hello.sh
 #Displays the entire contents of a small text file (animals.txt) directly in the terminal
 cat animals.txt
+#Displays the entire contents of a larger text file (alpha.txt) to demonstrate how it floods the terminal output
+cat alpha.txt
