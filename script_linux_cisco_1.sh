@@ -94,3 +94,5 @@ cat animals.txt
 cat alpha.txt
 #Displays the first 10 lines (default behavior) of the alpha.txt file
 head alpha.txt
+#Displays the last 10 lines (default behavior) of the alpha.txt file
+tail alpha.txt
