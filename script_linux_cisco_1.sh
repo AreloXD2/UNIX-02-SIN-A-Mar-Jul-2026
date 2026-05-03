@@ -76,3 +76,5 @@ ls -l hello.sh
 chmod u+x hello.sh
 #Verifies that the execute permission (x) has been successfully applied to the user owner
 ls -l hello.sh
+#Executes the script successfully from the current directory now that permissions are set
+./hello.sh
