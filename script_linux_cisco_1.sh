@@ -39,3 +39,5 @@ pwd
 cd Documents
 #Navigates through multiple directories at once using a multi-level relative path
 cd School/Art
+#Verifies the successful navigation into the nested Art directory
+pwd
