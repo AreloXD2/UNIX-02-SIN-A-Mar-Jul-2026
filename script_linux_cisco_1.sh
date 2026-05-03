@@ -7,3 +7,5 @@ ls Documents
 aptitude moo
 #Lists files and directories in long format, displaying detailed information like permissions, owner, size, and modification date
 ls -l
+#Lists files and directories in reverse alphabetical order
+ls -r
