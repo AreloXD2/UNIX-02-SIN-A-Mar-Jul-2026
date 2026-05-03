@@ -50,3 +50,5 @@ cd ..
 cd ~
 #Lists the contents of the /var/log/ directory in long format to see file details (permissions, owner, size, timestamp)
 ls -l /var/log/
+#Lists the contents of /var/log in long format and sorts them by modification time (newest first)
+ls -lt /var/log
