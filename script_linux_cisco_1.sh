@@ -108,3 +108,5 @@ ls
 cd ~
 # Copies 50 blocks of 1 Megabyte of zeros to create a 50MB file named swapex in /tmp
 dd if=/dev/zero of=/tmp/swapex bs=1M count=50
+# Example of using dd to clone an entire hard drive (from sda to sdb)
+# dd if=/dev/sda of=/dev/sdb
