@@ -9,3 +9,5 @@ aptitude moo
 ls -l
 #Lists files and directories in reverse alphabetical order
 ls -r
+#Lists files in long format and reverse alphabetical order using separate options
+ls -l -r
