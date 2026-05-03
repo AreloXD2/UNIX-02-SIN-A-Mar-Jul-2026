@@ -5,3 +5,5 @@ ls
 ls Documents
 #Executes a well-known Easter egg in the aptitude package manager
 aptitude moo
+#Lists files and directories in long format, displaying detailed information like permissions, owner, size, and modification date
+ls -l
