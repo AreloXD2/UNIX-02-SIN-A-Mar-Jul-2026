@@ -44,3 +44,5 @@ pwd
 # Change directory step by step: first into 'School', then into 'Art'
 cd School
 cd Art
+#Moves up one level to the parent directory (from Art back to School) using the ".." shortcut
+cd ..
