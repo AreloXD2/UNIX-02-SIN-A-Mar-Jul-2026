@@ -62,3 +62,5 @@ ls -r /var/log
 su -
 #Exits the current root shell session and returns to the previous user (sysadmin)
 exit
+# Attempts to execute a privileged command (steam locomotive) as a normal user, resulting in a permission denied error
+sl
