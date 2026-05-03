@@ -25,3 +25,5 @@ aptitude -vvv moo
 aptitude -v -v moo
 #Prints the absolute path of the current working directory
 pwd
+#Change directory (cd) command: used to navigate between folders in the file system
+cd
