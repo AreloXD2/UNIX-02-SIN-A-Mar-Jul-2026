@@ -33,3 +33,5 @@ cd Documents
 cd /
 #Navigates back to the home directory using an absolute path
 cd /home/sysadmin
+#Confirms the current location after using the absolute path
+pwd
