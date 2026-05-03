@@ -86,3 +86,5 @@ sudo chown root hello.sh
 ls -l hello.sh
 #Attempts to execute the script as a normal user, which now fails because the execute permission belongs only to the owner (root)
 ./hello.sh
+# Executes the script successfully using sudo, temporarily gaining root privileges to match the file's owner
+sudo ./hello.sh
