@@ -54,3 +54,5 @@ ls -l /var/log/
 ls -lt /var/log
 #Lists the contents of /var/log in long format and sorts them by file size (largest first) using separated options
 ls -l -S /var/log
+#Lists the contents of /var/log in long format, sorted by size, but reverses the order (smallest first) using combined options
+ls -lSr /var/log
