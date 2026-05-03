@@ -17,3 +17,5 @@ ls -rl
 ls -lr
 #Executes the aptitude Easter egg with one level of verbosity
 aptitude -v moo
+#Executes the aptitude Easter egg with two combined levels of verbosity
+aptitude -vv moo
