@@ -35,3 +35,5 @@ cd /
 cd /home/sysadmin
 #Confirms the current location after using the absolute path
 pwd
+#Moves into the Documents directory again to prepare for the next relative path test
+cd Documents
