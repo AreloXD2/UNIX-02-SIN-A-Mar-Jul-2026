@@ -46,3 +46,5 @@ cd School
 cd Art
 #Moves up one level to the parent directory (from Art back to School) using the ".." shortcut
 cd ..
+#Returns directly to the user's home directory from any location using the tilde (~) shortcut
+cd ~
