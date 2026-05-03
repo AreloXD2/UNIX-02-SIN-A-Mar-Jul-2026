@@ -92,3 +92,5 @@ sudo ./hello.sh
 cat animals.txt
 #Displays the entire contents of a larger text file (alpha.txt) to demonstrate how it floods the terminal output
 cat alpha.txt
+#Displays the first 10 lines (default behavior) of the alpha.txt file
+head alpha.txt
