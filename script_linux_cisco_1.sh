@@ -104,3 +104,5 @@ tail -n 5 alpha.txt
 cp /etc/passwd .
 #Lists the directory contents to verify that the passwd file was successfully copied
 ls
+# Returns to the user's home directory before running the dd command
+cd ~
