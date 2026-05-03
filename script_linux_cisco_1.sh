@@ -60,3 +60,5 @@ ls -lSr /var/log
 ls -r /var/log
 #Switches to the root user with a full login shell environment
 su -
+#Exits the current root shell session and returns to the previous user (sysadmin)
+exit
