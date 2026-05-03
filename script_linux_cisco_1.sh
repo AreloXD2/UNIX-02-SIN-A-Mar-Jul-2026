@@ -31,3 +31,5 @@ cd
 cd Documents
 #Navigates to the root directory (/) of the Linux filesystem
 cd /
+#Navigates back to the home directory using an absolute path
+cd /home/sysadmin
