@@ -72,3 +72,5 @@ cd ~/Documents
 ls -l hello.sh
 #Attempts to execute the script without execute permissions, resulting in a permission denied error
 ./hello.sh
+#Grants execute permission to the user owner of the script using the symbolic method
+chmod u+x hello.sh
