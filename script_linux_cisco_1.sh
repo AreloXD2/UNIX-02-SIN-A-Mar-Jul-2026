@@ -98,3 +98,5 @@ head alpha.txt
 tail alpha.txt
 #Displays a specific number of lines (the first 5) from the beginning of the file using the -n option
 head -n 5 alpha.txt
+#Displays a specific number of lines (the last 5) from the end of the file using the -n option
+tail -n 5 alpha.txt
