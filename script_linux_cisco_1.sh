@@ -84,3 +84,5 @@ ls -l
 sudo chown root hello.sh
 #Verifies the ownership change to ensure root is now the owner of the script
 ls -l hello.sh
+#Attempts to execute the script as a normal user, which now fails because the execute permission belongs only to the owner (root)
+./hello.sh
