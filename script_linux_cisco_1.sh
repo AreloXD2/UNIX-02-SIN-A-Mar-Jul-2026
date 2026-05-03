@@ -88,3 +88,5 @@ ls -l hello.sh
 ./hello.sh
 # Executes the script successfully using sudo, temporarily gaining root privileges to match the file's owner
 sudo ./hello.sh
+#Displays the entire contents of a small text file (animals.txt) directly in the terminal
+cat animals.txt
