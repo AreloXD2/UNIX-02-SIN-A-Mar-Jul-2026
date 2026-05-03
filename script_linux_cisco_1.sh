@@ -41,3 +41,6 @@ cd Documents
 cd School/Art
 #Verifies the successful navigation into the nested Art directory
 pwd
+# Change directory step by step: first into 'School', then into 'Art'
+cd School
+cd Art
