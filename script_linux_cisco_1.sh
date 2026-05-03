@@ -48,3 +48,5 @@ cd Art
 cd ..
 #Returns directly to the user's home directory from any location using the tilde (~) shortcut
 cd ~
+#Lists the contents of the /var/log/ directory in long format to see file details (permissions, owner, size, timestamp)
+ls -l /var/log/
