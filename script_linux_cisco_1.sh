@@ -100,3 +100,5 @@ tail alpha.txt
 head -n 5 alpha.txt
 #Displays a specific number of lines (the last 5) from the end of the file using the -n option
 tail -n 5 alpha.txt
+#Copies the /etc/passwd file into the current directory using the dot (.) shortcut
+cp /etc/passwd .
