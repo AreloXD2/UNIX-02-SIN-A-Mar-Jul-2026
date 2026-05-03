@@ -102,3 +102,5 @@ head -n 5 alpha.txt
 tail -n 5 alpha.txt
 #Copies the /etc/passwd file into the current directory using the dot (.) shortcut
 cp /etc/passwd .
+#Lists the directory contents to verify that the passwd file was successfully copied
+ls
