@@ -66,3 +66,5 @@ exit
 sl
 #Executes the steam locomotive command with administrative privileges using sudo, without needing a new shell
 sudo sl
+#Navigates to the Documents directory using the tilde shortcut for the home directory
+cd ~/Documents
