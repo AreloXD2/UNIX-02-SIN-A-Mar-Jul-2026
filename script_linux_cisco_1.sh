@@ -70,3 +70,5 @@ sudo sl
 cd ~/Documents
 #Lists detailed information about the hello.sh script, specifically to examine its file permissions, owner, and group
 ls -l hello.sh
+#Attempts to execute the script without execute permissions, resulting in a permission denied error
+./hello.sh
