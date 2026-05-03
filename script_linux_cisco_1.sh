@@ -13,3 +13,5 @@ ls -r
 ls -l -r
 #Lists files in long format and reverse alphabetical order using combined options
 ls -rl
+#Achieves the same result as -rl, showing that combined option order doesn't matter
+ls -lr
