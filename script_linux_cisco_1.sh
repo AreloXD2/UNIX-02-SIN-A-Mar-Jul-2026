@@ -74,3 +74,5 @@ ls -l hello.sh
 ./hello.sh
 #Grants execute permission to the user owner of the script using the symbolic method
 chmod u+x hello.sh
+#Verifies that the execute permission (x) has been successfully applied to the user owner
+ls -l hello.sh
