@@ -11,3 +11,5 @@ ls -l
 ls -r
 #Lists files in long format and reverse alphabetical order using separate options
 ls -l -r
+#Lists files in long format and reverse alphabetical order using combined options
+ls -rl
