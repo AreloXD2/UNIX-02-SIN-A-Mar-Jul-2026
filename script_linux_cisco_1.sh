@@ -52,3 +52,5 @@ cd ~
 ls -l /var/log/
 #Lists the contents of /var/log in long format and sorts them by modification time (newest first)
 ls -lt /var/log
+#Lists the contents of /var/log in long format and sorts them by file size (largest first) using separated options
+ls -l -S /var/log
