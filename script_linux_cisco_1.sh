@@ -68,3 +68,5 @@ sl
 sudo sl
 #Navigates to the Documents directory using the tilde shortcut for the home directory
 cd ~/Documents
+#Lists detailed information about the hello.sh script, specifically to examine its file permissions, owner, and group
+ls -l hello.sh
