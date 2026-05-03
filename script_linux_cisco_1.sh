@@ -64,3 +64,5 @@ su -
 exit
 # Attempts to execute a privileged command (steam locomotive) as a normal user, resulting in a permission denied error
 sl
+#Executes the steam locomotive command with administrative privileges using sudo, without needing a new shell
+sudo sl
