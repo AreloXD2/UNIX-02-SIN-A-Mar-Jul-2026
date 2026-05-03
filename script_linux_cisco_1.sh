@@ -80,3 +80,5 @@ ls -l hello.sh
 ./hello.sh
 #Lists all files in long format to view current ownership details for all files
 ls -l
+#Changes the owner of the hello.sh script to the root user, requiring administrative privileges
+sudo chown root hello.sh
