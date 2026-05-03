@@ -37,3 +37,5 @@ cd /home/sysadmin
 pwd
 #Moves into the Documents directory again to prepare for the next relative path test
 cd Documents
+#Navigates through multiple directories at once using a multi-level relative path
+cd School/Art
