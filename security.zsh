@@ -57,3 +57,11 @@ sudo chown luna:grupo_test mi_archivo
 ls -l mi_archivo
 # Add root user to the group (using root explicitly because $USER is empty)
 sudo usermod -aG grupo_test root
+# Create a directory and its subdirectory at once
+mkdir -p proyecto/sub
+# Create test files inside the new directory structure
+touch proyecto/readme proyecto/sub/datos
+# Recursively change owner to luna and group to grupo_test for the entire folder
+chown -R luna:grupo_test proyecto
+# List all files and subdirectories recursively to verify changes
+ls -lR proyecto
