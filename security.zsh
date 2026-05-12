@@ -21,3 +21,17 @@ touch secreto.txt
 mkdir privado
 # Verify the new restricted permissions applied correctly
 ls -l
+# Set default permission mask
+umask 022
+# Verify current user identity
+whoami
+# Create a test file with some text content
+echo "Hola" > mi_archivo
+# Check initial file permissions and ownership
+ls -l mi_archivo
+# Create a new user named luna with a home directory and zsh shell
+useradd -m -s /usr/bin/zsh luna
+# Transfer file ownership to the new user luna
+chown luna mi_archivo
+# Verify the ownership change was successful
+ls -l mi_archivo
