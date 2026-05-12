@@ -35,3 +35,13 @@ useradd -m -s /usr/bin/zsh luna
 chown luna mi_archivo
 # Verify the ownership change was successful
 ls -l mi_archivo
+# Display the groups the current user belongs to
+groups
+# Create a new group named grupo_test
+groupadd grupo_test
+# Display groups again to verify 
+groups
+# Create a new empty test file
+touch comun
+# Check the initial owner and group of the new file
+ls -l comun
