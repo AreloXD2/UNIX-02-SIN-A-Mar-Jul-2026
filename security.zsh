@@ -51,3 +51,9 @@ usermod -a -G grupo_test luna
 chgrp grupo_test comun
 # Verify the file now belongs to grupo_test instead of root
 ls -l comun
+# Change both owner to luna and group to grupo_test
+sudo chown luna:grupo_test mi_archivo
+# Verify the new user and group assignments
+ls -l mi_archivo
+# Add root user to the group (using root explicitly because $USER is empty)
+sudo usermod -aG grupo_test root
