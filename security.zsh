@@ -13,3 +13,11 @@ touch archivo2
 mkdir directorio2
 # Verify permissions. Success: archivo2 is 640 and directorio2 is 750
 ls -l
+# Set strict umask (removes all permissions for group and others)
+umask 077
+# Create a test file (will get 600: -rw-------)
+touch secreto.txt
+# Create a test directory (will get 700: drwx------)
+mkdir privado
+# Verify the new restricted permissions applied correctly
+ls -l
