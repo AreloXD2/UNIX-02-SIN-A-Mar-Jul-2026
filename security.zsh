@@ -45,3 +45,9 @@ groups
 touch comun
 # Check the initial owner and group of the new file
 ls -l comun
+# Append user luna to the supplementary group grupo_test
+usermod -a -G grupo_test luna
+# Change the group ownership of the file comun
+chgrp grupo_test comun
+# Verify the file now belongs to grupo_test instead of root
+ls -l comun
