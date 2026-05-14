@@ -98,3 +98,11 @@ grep "desarrolladores\|operaciones\|servicios_web" /etc/group
 grep -E "desarrolladores|operaciones|servicios_web" /etc/group
 # View the GID range on the system
 grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
+# Basic syntax
+# addgroup [options] group_name
+# Create groups with addgroup
+sudo addgroup diseño
+sudo addgroup --gid 2100 marketing
+sudo addgroup --system cache_web
+# Verify
+grep "diseño\|marketing\|cache_web" /etc/group
