@@ -83,3 +83,18 @@ id -g
 id -G
 # grep filter the word 'root' within the content
 cat /etc/group | grep root
+# Create a new directory in the home folder
+mkdir ~/proyecto_unix/
+# List all files with detailed information in the directory
+ls -la ~/proyecto_unix 
+# Create a simple group
+groupadd desarrolladores
+# Create a group with a specific GID
+groupadd -g 2000  operaciones
+# Create a system group (GID < 1000)
+groupadd --system servicios_web
+# Verify that they were created
+grep "desarrolladores\|operaciones\|servicios_web" /etc/group
+grep -E "desarrolladores|operaciones|servicios_web" /etc/group
+# View the GID range on the system
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
