@@ -106,3 +106,16 @@ sudo addgroup --gid 2100 marketing
 sudo addgroup --system cache_web
 # Verify
 grep "diseño\|marketing\|cache_web" /etc/group
+# View which groups the current user belongs to
+groups
+id
+# Add user to a group with usermod (low level)
+sudo usermod -aG desarrolladores $USER
+# Add user to the 'diseño' group
+sudo usermod -aG diseño $USER
+# Create a temporary group for the demo
+groupadd grupo_temporal
+# Add the current user to the temporary group
+usermod -aG grupo_temporal $USER
+# Verify that the user has 'grupo_temporal'
+id $USER 
