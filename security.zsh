@@ -81,3 +81,5 @@ id -u
 id -g
 # group IDs
 id -G
+# grep filter the word 'root' within the content
+cat /etc/group | grep root
