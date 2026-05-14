@@ -71,3 +71,13 @@ id
 # View all users on the system
 # head command specifies the number of lines to display.
 cat /etc/passwd | head -10
+# Print the groups the current user belongs to
+groups
+# Print the groups the 'root' user belongs to
+groups root
+# user ID (UID)
+id -u
+# primary group ID (GID)
+id -g
+# group IDs
+id -G
