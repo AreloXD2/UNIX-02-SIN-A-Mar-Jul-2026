@@ -65,3 +65,9 @@ touch proyecto/readme proyecto/sub/datos
 chown -R luna:grupo_test proyecto
 # List all files and subdirectories recursively to verify changes
 ls -lR proyecto
+# View the current user's numerical identity
+# numerical user ID, primary group, secondary groups
+id
+# View all users on the system
+# head command specifies the number of lines to display.
+cat /etc/passwd | head -10
