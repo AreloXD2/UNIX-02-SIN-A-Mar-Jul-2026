@@ -12,3 +12,14 @@ echo "Grupo actual:$(id -gn)"
 # Create a file before newgrp
 touch ~/antes_de_newgrp.txt
 ls -la ~/antes_de_newgrp.txt
+# Install the missing packages containing the 'newgrp' command and user mapping utilities
+apt install uidmap util-linux-extra
+# Locate the binary path of the 'newgrp' command to verify it was successfully installed
+which newgrp
+# Create a new system group named 'desarrolladores'
+groupadd desarrolladores
+# Change to group 'desarrolladores'
+newgrp desarrolladores
+# Verify that the active group changed
+id -gn
+echo "Nuevo grupo activo: $(id -gn)"
