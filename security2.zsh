@@ -6,3 +6,9 @@ id  -gn
 touch ~/test_grupo_heredado.txt
 # List detailed information for the newly created file to verify permissions and ownership
 ls -la ~/test_grupo_heredado.txt
+# Shows actual group
+id -gn
+echo "Grupo actual:$(id -gn)"
+# Create a file before newgrp
+touch ~/antes_de_newgrp.txt
+ls -la ~/antes_de_newgrp.txt
