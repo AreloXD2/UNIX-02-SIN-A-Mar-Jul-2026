@@ -42,3 +42,11 @@ ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt
 sudo groupadd grupo_restringido
 sudo gpasswd grupo_restringido
 # The system will prompt for a group password
+
+# A user who does NOT belong to the group can join temporarily if they know the password
+newgrp grupo_restringido
+# The system will prompt for the group password
+# If the password is correct, they join temporarily
+id -gn
+exit 
+# Upon exiting, they lose the temporary membership
