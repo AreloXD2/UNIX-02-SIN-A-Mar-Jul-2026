@@ -38,3 +38,7 @@ id -gn
 echo "Restored group: $(id -gn)"
 # Compare the two files
 ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt
+# Create a group with a password
+sudo groupadd grupo_restringido
+sudo gpasswd grupo_restringido
+# The system will prompt for a group password
