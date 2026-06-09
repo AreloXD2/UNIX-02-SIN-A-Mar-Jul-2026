@@ -1,15 +1,10 @@
 #!/bin/bash
 # Specifies that the script should be executed using the Bash shell interpreter.
 
-# Prints a message asking for the user's first name.
-echo "Enter your first name:"
-# Reads the input in 'raw' mode (-r), meaning backslashes won't be treated as escape characters and stores in FIRST_NAME
-read -r FIRST_NAME
-
-# Prints a message asking for the user's last name.
-echo "Enter your last name:"
-# Reads the input exactly as typed by the user and stores it in LAST_NAME.
-read -r LAST_NAME
+# Assigns the first command-line argument passed to the script to the variable FIRST_NAME.
+FIRST_NAME="${1}"
+# Assigns the second command-line argument passed to the script to the variable LAST_NAME.
+LAST_NAME="${2}"
 
 # Creates an empty file named output.txt.
 touch output.txt
