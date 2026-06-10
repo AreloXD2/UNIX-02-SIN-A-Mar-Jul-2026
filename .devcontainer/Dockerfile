@@ -345,5 +345,20 @@ RUN cat >> /root/.zshrc <<'EOF'
 PROMPT='%F{cyan}[Ariel-Buitron☠️]%f %F{yellow}%1~%f %(?.%F{green}√.%F{red}X %?)%f %# '
 EOF
 
+# ----------------------------------------------------------------------------
+# [m] CMD — default command when the container starts
+# ----------------------------------------------------------------------------
+# CMD defines what runs automatically when the container starts up.
+# The difference between CMD and RUN is important:
+# RUN executes DURING the image build and adds a layer to the image.
+# CMD executes AFTER the image is built, every time a container starts from it.
+# Think of RUN as setting up the kitchen and CMD as what the chef does
+# when they walk in every morning — the kitchen is already built, CMD
+# is just the first action that happens at runtime.
+# Here we launch zsh as the default interactive shell so when you open
+# a terminal in Codespaces you land straight into zsh (BHB Ch.1 explains
+# that the shell is the environment where you run commands and scripts).
+# Codespaces overrides this with its own terminal but defining CMD here
+# means the image still works with plain Docker outside of Codespaces.
 CMD ["/usr/bin/zsh"]
 
