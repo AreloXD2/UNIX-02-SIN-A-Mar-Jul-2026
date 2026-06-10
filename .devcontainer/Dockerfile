@@ -236,10 +236,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
- # --- Limpieza final: reducir el tamaño de la imagen ---
- # apt deja archivos de caché que ya no necesitamos después de instalar.
- # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
- # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
+ # ----------------------------------------------------------------------------
+ # [g] apt-get clean && rm -rf /var/lib/apt/lists/* — cleanup
+ # ----------------------------------------------------------------------------
+ # After installing everything, apt leaves downloaded package files sitting
+ # in /var/lib/apt/lists/ as cache — we don't need them anymore.
+ # We delete them HERE inside the same RUN instruction and that's the key part:
+ # if we did this in a separate RUN, Docker would have already saved a layer
+ # WITH those files in it and the image size wouldn't shrink at all.
+ # Doing it in the same RUN means that layer never had the cache files
+ # to begin with (BHB Ch.3 — keeping image size small is important when
+ # you are rebuilding the lab environment constantly).
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
