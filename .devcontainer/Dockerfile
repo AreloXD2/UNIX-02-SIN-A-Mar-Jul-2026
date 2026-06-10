@@ -276,13 +276,27 @@ SHELL ["/bin/bash", "-c"]
 # so setting this here means your terminal starts right next to your code.
 WORKDIR /workspaces
 
-# Configuración de Git para el contenedor:
-# - safe.directory *: confía en cualquier repo montado (necesario porque
-#   /workspaces/... tiene un UID distinto al de root dentro del container).
-# - init.defaultBranch main: evita warnings de "master vs main" en git init.
-# - pull.rebase false: merge por defecto al hacer pull (más intuitivo)
-# - git lfs install --system: registra los hooks de LFS globalmente para
-#   que, si un repo los necesita, funcionen sin sorpresas.
+# ----------------------------------------------------------------------------
+# [j] RUN git config && git lfs install — global git configuration
+# ----------------------------------------------------------------------------
+# These commands configure Git system-wide for every user in the container.
+# "--system" means the settings apply to everyone, not just root.
+#
+# safe.directory '*' tells Git to trust any directory regardless of who
+# owns it — Codespaces mounts the repo with a different owner than the
+# container's root user, without this Git refuses to work and throws
+# an "unsafe directory" error.
+#
+# init.defaultBranch main makes "git init" create a branch called "main"
+# instead of the old default "master" — avoids deprecation warnings.
+#
+# pull.rebase false means "git pull" merges instead of rebasing —
+# easier to understand for beginners, you get a merge commit instead
+# of a rewritten history (BHB Ch.3 uses git clone and pull constantly
+# to manage the lab repository).
+#
+# git lfs install registers Git Large File Storage hooks system-wide
+# so the container can handle big binary files in repositories that use it.
 RUN git config --system --add safe.directory '*' \
  && git config --system init.defaultBranch main \
  && git config --system pull.rebase false \
