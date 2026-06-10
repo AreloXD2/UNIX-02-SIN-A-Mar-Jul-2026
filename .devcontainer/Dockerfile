@@ -316,6 +316,30 @@ RUN git config --system --add safe.directory '*' \
 
 RUN chsh -s /usr/bin/zsh root
 
+# ----------------------------------------------------------------------------
+# [l] RUN cat heredoc — customizing the zsh prompt
+# ----------------------------------------------------------------------------
+# A heredoc (here document) is a way to pass multiple lines of text as
+# input to a command without creating a separate file first.
+# BHB Ch.1 covers heredoc redirection with "<<" — the delimiter EOF marks
+# where the input starts and ends, everything between is treated as text.
+# The single quotes around 'EOF' prevent the shell from expanding variables
+# inside — what you write is exactly what gets written to the file.
+#
+# "cat >> /root/.zshrc" appends the content to the zsh config file.
+# The ">>" is the append redirection operator from BHB Ch.1 — it adds
+# to the end of the file without overwriting what was already there.
+# Every time zsh starts it reads ~/.zshrc and runs whatever is inside.
+#
+# The PROMPT line builds a custom command prompt:
+# %F{cyan}[Ariel-Buitron☠️]%f  — shows a cyan label with your name
+# %F{yellow}%1~%f              — shows the current folder in yellow
+# %(?.%F{green}√.%F{red}X %?) — green checkmark if last command succeeded
+#                                (exit code 0), red X with the code if it
+#                                failed — same as checking "$?" manually
+#                                after every command (BHB Ch.1 — exit codes)
+# %#                           — shows # when running as root
+
 RUN cat >> /root/.zshrc <<'EOF'
 
 PROMPT='%F{cyan}[Ariel-Buitron☠️]%f %F{yellow}%1~%f %(?.%F{green}√.%F{red}X %?)%f %# '
