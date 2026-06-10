@@ -202,17 +202,25 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     net-tools \
     iputils-ping \
     \
-    # === Anonimato: Tor y similares ===
-    # tor = cliente de la red Tor.
-    # torsocks = "envoltorio" que hace pasar cualquier comando por Tor.
-    # proxychains4 = encadena múltiples proxies.
-    # obfs4proxy = ofusca el tráfico de Tor para evadir bloqueos.
+    # --- Anonymity and traffic routing tools ---
+    # tor routes your traffic through multiple encrypted relays around
+    # the world so the target never sees your real IP address.
+    # torsocks wraps any command and forces its traffic through Tor —
+    # for example "torsocks curl https://example.com" exits from a
+    # Tor node instead of your machine.
+    # proxychains4 chains multiple proxies together so traffic hops
+    # through them in sequence before reaching the target (BHB Ch.3
+    # includes these as part of the pentesting toolkit).
+    # obfs4proxy disguises Tor traffic so it looks like normal HTTPS
+    # to firewalls that try to block Tor connections.
     tor \
     torsocks \
     proxychains4 \
     obfs4proxy \
     \
-    # === Cliente HTTP más legible que curl para aprender ===
+    # httpie is a friendlier alternative to curl for making HTTP requests.
+    # Output is color-coded and easier to read — good for learning how
+    # web requests and responses actually work under the hood.
     httpie \
     \
  # --- Después de instalar, activamos el idioma español ---
