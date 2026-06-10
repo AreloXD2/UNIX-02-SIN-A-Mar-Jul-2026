@@ -29,27 +29,24 @@ FROM kalilinux/kali-rolling:latest
 
 
 # ----------------------------------------------------------------------------
-# ENV: variables de entorno permanentes dentro del contenedor
+# [c] ENV — environment variables
 # ----------------------------------------------------------------------------
-# Las variables de entorno son "ajustes globales" que cualquier programa
-# del sistema puede leer. Se escriben en MAYÚSCULAS por convención.
+# ENV sets permanent variables inside the container that any program can read
+# at any time — same concept as the built-in bash variables like $SHELL or
+# $PATH that BHB Ch.1 explains (you can check them with "echo ${SHELL}").
 #
-#   DEBIAN_FRONTEND=noninteractive
-#     Le dice al instalador de paquetes (apt) "no me hagas preguntas
-#     interactivas, asume respuestas por defecto". Sin esto, algunos
-#     paquetes pausarían el build esperando que pulsemos una tecla y se
-#     quedaría colgado para siempre (porque no hay nadie mirando).
+# DEBIAN_FRONTEND=noninteractive
+#   tells apt not to ask any questions during package installation.
+#   Without this, some packages would pause the build waiting for a keypress
+#   that nobody is there to press.
 #
-#   LANG / LC_ALL=es_ES.UTF-8
-#     Configuran idioma y codificación de caracteres. UTF-8 es lo que
-#     permite que acentos, ñ, €, emojis, etc. se muestren bien.
+# LANG=es_ES.UTF-8 / LC_ALL=es_ES.UTF-8
+#   set the system language and character encoding to Spanish UTF-8.
+#   UTF-8 is what makes accents, ñ and special characters display correctly.
 #
-#   TERM=xterm-256color
-#     Le indica a los programas que la terminal admite 256 colores, para
-#     que vim, nvim, htop, etc. se vean con todos sus colores.
-#
-# La barra invertida "\" al final de cada línea significa "esto continúa
-# en la línea siguiente". Solo es para legibilidad.
+# TERM=xterm-256color
+#   tells programs the terminal supports 256 colors, so tools like
+#   vim or nmap render with full color instead of plain black and white.
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
