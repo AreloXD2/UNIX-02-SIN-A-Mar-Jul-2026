@@ -54,12 +54,16 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 
 # ----------------------------------------------------------------------------
-# Pre-respuesta a una pregunta interactiva de Wireshark
+# [d] RUN debconf-set-selections — pre-answering Wireshark's install prompt
 # ----------------------------------------------------------------------------
-# Wireshark/tshark PREGUNTA durante su instalación si los usuarios
-# normales (no-root) deben poder capturar paquetes. Como en el contenedor
-# siempre somos root, respondemos "false" POR ADELANTADO usando
-# debconf-set-selections para que no detenga el build esperando input.
+# When you install Wireshark/tshark, the installer stops and asks:
+# "Should non-superusers be able to capture packets?" and waits for an answer.
+# Inside a Docker build nobody is watching, so the build would hang forever.
+# We fix this by injecting the answer "false" BEFORE the package is installed
+# using debconf-set-selections — basically we pre-fill the form so it never asks.
+# The "|" pipe sends the output of echo directly as input to debconf-set-selections
+# (BHB Ch.1 covers pipes and redirection — stdout of one command becomes
+# stdin of the next one).
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
