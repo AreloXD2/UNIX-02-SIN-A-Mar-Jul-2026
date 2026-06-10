@@ -122,13 +122,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sed \
     grep \
     \
-    # === Utilidades básicas de UNIX ===
-    # coreutils trae cat, ls, head, tail, sort, cut, tr, etc.
-    # findutils trae find y xargs.
-    # procps trae ps, top, kill (gestión de procesos).
-    # less = paginador para leer archivos largos.
-    # tree = muestra directorios como árbol.
-    # jq = procesa JSON desde la línea de comandos.
+    # --- Core Unix utilities ---
+    # coreutils gives us the basic commands every bash script uses:
+    # cat, ls, head, tail, sort, cut, tr — BHB Ch.1 uses most of these
+    # constantly when navigating the filesystem and processing output.
+    # procps gives us ps and kill for process management — BHB Ch.1
+    # uses "ps -ef" to check running processes and background jobs.
+    # jq does for JSON what grep/awk do for plain text — filters and
+    # extracts data from JSON output directly in the terminal.
+    # man-db gives us the "man" command. BHB Ch.1 teaches using
+    # "man <command>" as the first step to understand any Linux tool.
+    # The base Kali image strips it out to save space so we reinstall it.
     coreutils \
     findutils \
     procps \
