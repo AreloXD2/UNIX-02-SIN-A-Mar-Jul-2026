@@ -1,20 +1,17 @@
-# ============================================================================
-#  Dockerfile — "receta" para construir la imagen del curso
-# ============================================================================
-#  Un Dockerfile es un archivo de texto con instrucciones paso a paso que
-#  Docker (o Codespaces) lee de arriba hacia abajo para fabricar una
-#  "imagen". Una imagen es como un molde congelado de un sistema Linux
-#  listo para usar; cada vez que abres el Codespace, se crea un
-#  "contenedor" a partir de ese molde.
-#
-#  Analogía: la imagen es el PLANO, el contenedor es la CASA construida
-#  con ese plano. Puedes construir muchas casas iguales a partir de un
-#  solo plano, y si destruyes una casa el plano sigue intacto.
-#
-#  Cada instrucción (FROM, ENV, RUN...) crea una "capa". Docker guarda
-#  esas capas en caché: si no cambias las primeras líneas, no las
-#  reconstruye y el siguiente build es casi instantáneo.
-# ============================================================================
+# ----------------------------------------------------------------------------
+# [b] image / layer / cache
+# ----------------------------------------------------------------------------
+# Every instruction in this file creates a layer — think of it like stacking
+# pancakes, each one sits on top of the previous one and you can't change
+# the bottom ones without remaking everything above them.
+# Docker saves each layer in cache, so the next time you build, if that line
+# didn't change, Docker just reuses the cached version instead of running it again.
+# That's why we put the base image and env vars at the top (they never change)
+# and any custom stuff at the bottom (BHB Ch.3 — when setting up the lab,
+# the book rebuilds containers constantly and layer caching is what keeps
+# it from taking forever every single time).
+# Bottom line: instruction order is not random, it directly affects
+# how long builds take and how big the final image ends up being.
 
 
 # ----------------------------------------------------------------------------
