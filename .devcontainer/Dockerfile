@@ -93,9 +93,16 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 # it tells bash "this command keeps going on the next line" (BHB Ch.1).
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
-    # === Editores de texto y shells (intérpretes de comandos) ===
+    # --- Text editors and shells ---
+    # neovim / vim: terminal-based text editors. BHB Ch.1 mentions that
+    # during a pentest these may be the only editors available since
+    # there is no graphical interface — you need to know at least one.
     neovim \
     vim \
+    # zsh: an alternative shell to bash. Used here as the default
+    # interactive shell (see CMD at the bottom). BHB Ch.1 explains
+    # that Kali uses zsh by default and you have to switch to bash
+    # manually with "exec bash" if you want bash features.
     zsh \
     bash-completion \
     \
