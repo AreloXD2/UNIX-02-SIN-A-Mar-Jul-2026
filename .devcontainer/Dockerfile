@@ -223,9 +223,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # web requests and responses actually work under the hood.
     httpie \
     \
- # --- Después de instalar, activamos el idioma español ---
- # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
- # activar esa línea. Luego locale-gen compila los archivos de idioma.
+ # ----------------------------------------------------------------------------
+ # [f] sed -i locale.gen && locale-gen — enabling the Spanish locale
+ # ----------------------------------------------------------------------------
+ # The locales package was installed above but Spanish is not active yet.
+ # /etc/locale.gen is a text file where each locale is listed but disabled
+ # with a "#" at the start of the line — just like bash comments (BHB Ch.1).
+ # sed removes that "#" to uncomment the es_ES.UTF-8 line and activate it.
+ # This is exactly what BHB Ch.2 teaches about sed — editing text streams
+ # without opening the file manually: "sed 's/old/new/g' file".
+ # locale-gen then compiles the locale files that programs read at runtime.
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
