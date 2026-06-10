@@ -18,12 +18,17 @@
 
 
 # ----------------------------------------------------------------------------
-# FROM: imagen base sobre la que vamos a construir
+# [a] FROM — base image
 # ----------------------------------------------------------------------------
-# En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
-# en su versión "rolling" (actualización continua, siempre al día).
-# Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+# FROM tells Docker which base image to start from — instead of building
+# a Linux system from zero, we grab Kali Linux which already comes with
+# hundreds of pentesting tools ready to go (BHB Ch.3 uses Kali as the
+# main machine for the entire hacking lab, that's exactly why we use it here).
+# "kali-rolling" means the packages are always the latest versions, there's
+# no fixed release like Ubuntu 22.04 — it just keeps rolling forward.
+# The ":latest" tag makes sure we always pull the most recent snapshot of it.
 FROM kalilinux/kali-rolling:latest
+
 
 
 # ----------------------------------------------------------------------------
