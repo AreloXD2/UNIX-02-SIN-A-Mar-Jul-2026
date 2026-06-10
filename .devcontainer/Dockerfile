@@ -160,12 +160,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     locales \
     \
-    # === Linter (revisor automático de errores) para scripts Bash ===
+     # --- Script linter and network scanners ---
+    # shellcheck analyzes bash scripts and catches syntax errors before
+    # you even run them. Think of it as the "-n" dry-run flag from
+    # BHB Ch.1 ("bash -n script.sh") but way more detailed — it tells
+    # you exactly what is wrong and why.
     shellcheck \
     \
-    # === Reconocimiento y escaneo de red ===
-    # nmap = el escáner de puertos más famoso.
-    # masscan = escaneo masivo de rangos grandes de IPs.
+    # nmap is the most famous port scanner in pentesting. BHB Ch.3
+    # installs it as one of the main hacking tools for the lab and
+    # Ch.4 uses it heavily for reconnaissance — it tells you which
+    # ports are open and what services are running on a target.
+    # masscan does the same but way faster — built for scanning
+    # huge IP ranges in seconds instead of minutes.
     nmap \
     masscan \
     \
