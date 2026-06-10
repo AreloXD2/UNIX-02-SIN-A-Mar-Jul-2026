@@ -303,11 +303,16 @@ RUN git config --system --add safe.directory '*' \
  && git lfs install --system
 
 # ----------------------------------------------------------------------------
-# CMD: comando que se ejecuta por defecto al arrancar el contenedor
+# [k] RUN chsh — changing the default shell to zsh
 # ----------------------------------------------------------------------------
-# Lanza una shell bash interactiva. Codespaces la sobrescribe con su
-# propia terminal integrada de VS Code, pero es buena práctica dejarla
-# definida para que la imagen sea usable también con Docker puro.
+# "chsh" stands for "change shell" — it edits /etc/passwd to replace
+# the login shell for the root user with zsh.
+# This is the same concept BHB Ch.3 uses when setting up Kali:
+# "sudo usermod --shell /bin/bash kali" — same idea, just targeting
+# a different user and a different shell.
+# Note that bash is still used for scripting (that's what the SHELL
+# instruction above does), zsh is just for the interactive prompt
+# where you type commands manually.
 
 RUN chsh -s /usr/bin/zsh root
 
