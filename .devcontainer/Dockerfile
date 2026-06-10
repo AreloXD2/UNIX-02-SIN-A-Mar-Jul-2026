@@ -69,23 +69,28 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 
 
 # ----------------------------------------------------------------------------
-# RUN: ejecutar comandos durante la construcción de la imagen
+# [e] RUN apt-get update && apt-get install — installing all tools at once
 # ----------------------------------------------------------------------------
-# Aquí instalamos TODO el software del curso en un solo RUN.
+# apt-get update refreshes the list of available packages from Kali's servers.
+# Without this, apt might try to install outdated or nonexistent versions.
+# apt-get install is the actual command that downloads and installs the packages.
+# They are two separate steps but we always run update first (BHB Ch.3 does
+# exactly this when setting up the lab: "apt update" then "apt upgrade").
 #
-#   apt-get update          -> actualiza la lista de paquetes disponibles
-#   apt-get install         -> descarga e instala los paquetes listados
-#     -y                    -> responde "sí" automáticamente
-#     --no-install-recommends -> instala SOLO lo esencial (no los extras
-#                                sugeridos). Ahorra cientos de MB.
+# The "&&" means: only run the next command if the previous one succeeded.
+# If update fails, install never starts — the build stops with a clear error.
+# This is the same "&&" control operator from BHB Ch.1 (logical AND).
 #
-# ¿Por qué un solo RUN gigante y no 10 RUN pequeños?
-# Porque CADA RUN crea una capa nueva en la imagen. Menos capas = imagen
-# más pequeña, más rápida de construir y de descargar.
+# "-y" automatically answers yes to every confirmation prompt.
+# "--no-install-recommends" only installs what is strictly required,
+# skipping optional extras — this keeps the image smaller.
 #
-# El "&&" encadena comandos: ejecuta el siguiente SOLO SI el anterior
-# terminó bien. Si algo falla, el build se detiene con error (que es lo
-# que queremos: mejor un error claro que una imagen rota).
+# Everything is in ONE big RUN instead of many separate RUN instructions
+# because each RUN creates a new layer (BHB Ch.3 — layer/cache concept).
+# Fewer layers = smaller image = faster to download and run.
+#
+# The trailing "\" at the end of each line is just line continuation —
+# it tells bash "this command keeps going on the next line" (BHB Ch.1).
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
     # === Editores de texto y shells (intérpretes de comandos) ===
