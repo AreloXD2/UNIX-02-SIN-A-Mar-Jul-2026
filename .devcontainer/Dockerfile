@@ -106,8 +106,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zsh \
     bash-completion \
     \
-    # === Herramientas de 4ta generación ===
-    # Estas son las protagonistas de las Unidades 2, 3 y 4:
+    # --- Classic text processing tools (BHB Ch.2) ---
+    # These three are covered heavily in BHB Ch.2 as the main tools
+    # for parsing and filtering text output from commands and files.
+    # gawk: processes text field by field — BHB Ch.2 uses it to extract
+    # specific columns from log files, like "awk '{print $1}' log.txt"
+    # to pull out just the IP addresses.
+    # sed: edits text streams — BHB Ch.2 uses it to find and replace
+    # content inside files without opening them manually.
+    # grep: filters lines that match a pattern — one of the most used
+    # tools in the whole book for searching through command output.
     perl \
     make \
     gawk \
