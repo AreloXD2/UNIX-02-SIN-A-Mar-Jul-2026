@@ -176,13 +176,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nmap \
     masscan \
     \
-    # === Captura y análisis de paquetes de red ===
-    # tcpdump = capturador clásico por terminal.
-    # tshark = versión de terminal de Wireshark.
+    # --- Packet capture and network tools ---
+    # tcpdump captures network traffic directly from the terminal —
+    # lets you see exactly what a script is sending over the wire,
+    # useful for debugging and understanding how tools communicate.
+    # tshark is the terminal version of Wireshark, same power but
+    # usable inside a script or over SSH with no graphical interface
+    # (BHB Ch.3 sets up tshark as part of the lab toolkit).
     tcpdump \
     tshark \
     \
-    # === Utilidades de red variadas ===
+    # netcat opens raw TCP/UDP connections — used in pentesting for
+    # transferring files, testing ports and catching reverse shells.
+    # socat is like netcat but more powerful, supports SSL and more.
+    # dnsutils gives us dig and nslookup for querying DNS records.
+    # iputils-ping gives us the ping command that BHB Ch.1 uses in
+    # the "ping_with_arguments.sh" script example.
     netcat-traditional \
     socat \
     dnsutils \
