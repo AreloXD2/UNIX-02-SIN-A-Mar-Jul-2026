@@ -139,16 +139,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     less \
     tree \
     jq \
-    \
-    # === Páginas de manual (comando `man`) ===
-    # La imagen base de Kali viene sin documentación para
-    # ahorrar espacio. La reinstalamos porque en el curso "man bash" o
-    # "man grep" es material de consulta obligada.
     man-db \
     manpages \
     manpages-posix \
     \
-    # === Red básica y utilidades de descarga ===
+     # --- Network and download utilities ---
+    # curl and wget are used to download files from URLs directly in
+    # the terminal. BHB Ch.3 uses both to grab tools from GitHub like
+    # Gitjacker and LinEnum during the lab setup.
+    # git lets us clone repositories — BHB Ch.3 starts the whole lab
+    # setup with "git clone https://github.com/dolevf/Black-Hat-Bash".
+    # git-lfs handles large binary files that don't fit well in normal git.
+    # ca-certificates stores trusted SSL certificates so curl and wget
+    # can connect to HTTPS sites without throwing security errors.
+    # locales is needed to generate the Spanish locale we enable later.
     curl \
     wget \
     git \
