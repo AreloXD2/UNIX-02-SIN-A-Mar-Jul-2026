@@ -28,3 +28,9 @@ else
     echo "User is not root!"
 # End of the main if condition
 fi
+# We add a new user called luna
+# adduser luna
+# We verify the user
+# id luna
+# We change user and execute the script, the result is " User is not root!"
+# su - luna
