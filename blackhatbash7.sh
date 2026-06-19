@@ -52,6 +52,9 @@ bg %1
 
 # EXERCISE 2
 
+# Grant executable permissions to the script so it can be run by the system
+chmod +x exercise_solution.sh
+
 # Run the script in the background using localhost to bypass network blocks,
 # combined with 'ps' to catch the process active during its 'sleep' state.
 nohup ./exercise_solution.sh prueba_sleep 127.0.0.1 & ps aux | grep exercise_solution.sh
@@ -62,3 +65,6 @@ ps aux | grep 30574
 
 # Display the contents of the generated CSV file to verify the success output
 cat results.csv
+
+# Pause the script execution for 30 seconds
+sleep 30
