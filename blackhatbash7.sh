@@ -48,3 +48,14 @@ sleep 100 &
 jobs
 fg %1
 bg %1
+
+
+# EXERCISE 2
+# Execute the script in the background, keeping it alive even if the terminal closes
+nohup ./exercise_solution.sh mysite nostarch.com &
+
+# Search the active processes to check if the script is still running
+ps aux | grep exercise_solution.sh
+
+# Display the contents of the generated CSV file to verify the final output
+cat results.csv
