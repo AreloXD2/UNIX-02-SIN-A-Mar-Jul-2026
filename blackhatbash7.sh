@@ -51,11 +51,14 @@ bg %1
 
 
 # EXERCISE 2
-# Execute the script in the background, keeping it alive even if the terminal closes
-nohup ./exercise_solution.sh mysite nostarch.com &
 
-# Search the active processes to check if the script is still running
-ps aux | grep exercise_solution.sh
+# Run the script in the background using localhost to bypass network blocks,
+# combined with 'ps' to catch the process active during its 'sleep' state.
+nohup ./exercise_solution.sh prueba_sleep 127.0.0.1 & ps aux | grep exercise_solution.sh
 
-# Display the contents of the generated CSV file to verify the final output
+# Search the active processes using the specific Process ID (PID)
+# This avoids text clutter and false positives from other terminal windows or editors
+ps aux | grep 30574
+
+# Display the contents of the generated CSV file to verify the success output
 cat results.csv

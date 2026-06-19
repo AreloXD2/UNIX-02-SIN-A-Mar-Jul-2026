@@ -40,3 +40,5 @@ else
   # If ping fails: append failure row with current date to the CSV
   echo "failure,${NAME},${DOMAIN},$(date)" >> "${OUTPUT_FILE}"
 fi
+# Pause the script execution for 30 seconds to allow process tracking
+sleep 30
