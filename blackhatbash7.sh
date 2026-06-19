@@ -35,9 +35,11 @@ grep 'Godzilla' newlog.txt
 
 sed '1d' newlog.txt
 sed -i '1d' newlog.txt
-diff log.txt newlog.txt #Verify ig line 1 was deleted
+diff log.txt newlog.txt #Verify if line 1 was deleted
 sed -i '$d' newlog.txt
-diff log.txt newlog.txt #Verify ig line 1 was deleted
+diff log.txt newlog.txt #Verify if last line was deleted
 sed 's/ //g' newlog.txt > newlog1.txt
 cat newlog1.txt
 sed '5,7d' newlog1.txt
+
+sed -n '10,15 p' log.txt
