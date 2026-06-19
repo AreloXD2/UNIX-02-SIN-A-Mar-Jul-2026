@@ -32,3 +32,12 @@ grep "Mozilla" log.txt
 grep "Godzilla" log.txt
 sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
 grep 'Godzilla' newlog.txt
+
+sed '1d' newlog.txt
+sed -i '1d' newlog.txt
+diff log.txt newlog.txt #Verify ig line 1 was deleted
+sed -i '$d' newlog.txt
+diff log.txt newlog.txt #Verify ig line 1 was deleted
+sed 's/ //g' newlog.txt > newlog1.txt
+cat newlog1.txt
+sed '5,7d' newlog1.txt
